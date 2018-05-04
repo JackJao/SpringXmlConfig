@@ -1,6 +1,7 @@
-package com.jason.demo.springxml;
+package com.jason.demo.java2xml;
 
-import com.jason.demo.springxml.config.JavaConfig;
+import com.jason.demo.springxml.ICompactDisc;
+import com.jason.demo.springxml.IMediaPlayer;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +14,7 @@ import javax.annotation.Resource;
  * JavaConfig中有多少个bean就会初始化多少个
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = JavaConfig.class)
+@ContextConfiguration(classes = JavaConfigCommon.class)
 public class CDPlayerTest {
 
     /**

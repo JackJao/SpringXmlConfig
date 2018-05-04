@@ -8,9 +8,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import javax.annotation.Resource;
 
 /**
- * @Description: TODO
- * @Author Gao
- * @Date 2018/5/3 15:10
+ * @author Gao
+ * @date 2018/5/3 15:10
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring/spring-core.xml"})
