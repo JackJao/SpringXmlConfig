@@ -3,6 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--使用import可以拆分配置文件-->
+    <!--使用import可以把拆分配置文件合在一起-->
     <import resource="classpath*:spring/spring-core.xml"/>
+    <!--使用bean配置可以把spring中java配置的bean加载到xml中使用-->
+    <!--<bean class="需要配置的javaConfig的类的权限定名"/>-->
+    <bean class="com.jason.demo.java2xml.JavaConfig1"/>
+
+    <!--这个配置文件把被拆分的spring-core和JavaConfig1的配置组合起来了，这里我并没有做实际的bena依赖，spring-core中就可以使用JavaConfig1中的bean-->
 </beans>
