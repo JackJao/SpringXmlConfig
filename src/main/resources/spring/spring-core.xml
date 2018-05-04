@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd">
+    <!--配置spring核心的东西-->
+    <!--默认调用无参构造器，创建bean-->
+    <bean id="jayChouCDBeanId" class="com.jason.demo.springxml.JayChouCD"/>
+    <!--调用有参数的构造器-->
+    <!--<bean id="mp3PlayerBeanIdByConstruc" class="com.jason.demo.springxml.Mp3Player">
+        <constructor-arg ref="jayChouCDBeanId"/>
+    </bean>-->
+    <bean id="mp3PlayerBeanIdByConstruc" class="com.jason.demo.springxml.Mp3Player" c:_0-ref="jayChouCDBeanId"/>
+    <!--构造器注入,使用c-->
+    <bean id="wangLiHongCDBeanId" class="com.jason.demo.springxml.WangLiHongCD" c:title="改变自己" c:name="阿杰"/>
+    <!--属性注入,使用p 1.-->
+    <!--<bean id="wangLiHongCDBeanIdByProperties" class="com.jason.demo.springxml.WangLiHongCD" p:title="大城小爱" p:name="阿强"/>-->
+    <!--2.-->
+    <!--<bean id="wangLiHongCDBeanIdByProperties" class="com.jason.demo.springxml.WangLiHongCD">
+
+        <property name="title">
+           <value type="java.lang.String">唯一</value>
+        </property>
+        <property name="name">
+            <value type="java.lang.String">阿狗</value>
+        </property>
+
+    </bean>-->
+    <!--3.-->
+    <!--<bean id="wangLiHongCDBeanIdByProperties" class="com.jason.demo.springxml.WangLiHongCD">
+        <property name="title" value="唯一"/>
+        <property name="name" value="阿毛"/>
+    </bean>-->
+    <util:list id="mutilUser">
+        <value>阿狗1</value>
+        <value>阿狗2</value>
+        <value>阿狗3</value>
+        <value>阿狗4</value>
+    </util:list>
+    <!--4.使用util:list 注入集合,然后使用p或者c标签，简洁的写法-->
+    <bean id="wangLiHongCDBeanIdByProperties" class="com.jason.demo.springxml.WangLiHongCD" p:name="第一位听众阿强" p:title="龙的传人" p:mutilUser-ref="mutilUser"/>
+<import resource="classpath*:"></import>
+</beans>
