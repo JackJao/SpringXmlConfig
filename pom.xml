@@ -25,7 +25,7 @@
         <spring.version>5.0.5.RELEASE </spring.version>
         <junit.version>4.12</junit.version>
         <druid.version>1.1.9</druid.version>
-        <aspectj.version>1.9.1</aspectj.version>
+        <!--<aspectj.version>1.9.1</aspectj.version>-->
     </properties >
 
     <dependencies >

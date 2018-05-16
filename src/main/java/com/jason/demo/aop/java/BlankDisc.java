@@ -1,6 +1,5 @@
 package com.jason.demo.aop.java;
 
-import com.jason.demo.springxml.ICompactDisc;
 
 import java.util.List;
 
@@ -51,7 +50,7 @@ public class BlankDisc implements ICompactDisc{
         }
     }
     @Override
-    public void trackCount(int trackCount){
+    public void trackCount(Integer trackCount){
         System.out.println("播放磁道："+tracks.get(trackCount));
     }
 }

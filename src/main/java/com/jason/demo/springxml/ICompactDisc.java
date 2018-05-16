@@ -5,6 +5,4 @@ package com.jason.demo.springxml;
  */
 public interface ICompactDisc {
     void played();
-
-    void trackCount(int tranck);
 }

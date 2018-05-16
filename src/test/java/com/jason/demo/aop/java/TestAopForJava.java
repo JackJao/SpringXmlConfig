@@ -1,6 +1,5 @@
 package com.jason.demo.aop.java;
 
-import com.jason.demo.springxml.ICompactDisc;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,6 +1,5 @@
 package com.jason.demo.aop.java;
 
-import com.jason.demo.springxml.ICompactDisc;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
