@@ -45,5 +45,6 @@
     </util:list>
     <!--4.使用util:list 注入集合,然后使用p或者c标签，简洁的写法-->
     <bean id="wangLiHongCDBeanIdByProperties" class="com.jason.demo.springxml.WangLiHongCD" p:name="第一位听众阿强" p:title="龙的传人" p:mutilUser-ref="mutilUser"/>
-<import resource="classpath*:"></import>
+    <import resource="classpath*:"></import>
+
 </beans>
