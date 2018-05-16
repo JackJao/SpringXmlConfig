@@ -31,6 +31,11 @@ public class WangLiHongCD implements ICompactDisc{
         }
     }
 
+    @Override
+    public void trackCount(int tranck) {
+        System.out.println("不看这个，暂时没有意义");
+    }
+
     public  void setTitle(String title){
         this.title = title;
     }
