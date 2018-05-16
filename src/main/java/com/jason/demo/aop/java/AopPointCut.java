@@ -66,13 +66,17 @@ public class AopPointCut {
     /**
      * 环绕通知示例,附带修改参数值
      */
-    /*@Around("el(count)")
+    @Around("el(count)")
     public void aroundByParams(ProceedingJoinPoint proceedingJoinPoint,Integer count){
         System.out.println("前置==〉磁道编号"+count);
         try {
             //磁道计算跳过第一个,这里改变了要传入目标对象的参数的值，直接跳过“夜曲”，该“夜曲”未被播放
             count = count + 1;
             proceedingJoinPoint.proceed(new Object[]{count});
+            //获取参数=========可做其它业务操作
+            Object[] args = proceedingJoinPoint.getArgs();
+            //获取目标对象=======可做其他业务操作
+            proceedingJoinPoint.getTarget();
             //调用目标，不做修改
             //proceedingJoinPoint.proceed();
         } catch (Throwable throwable) {
@@ -80,7 +84,7 @@ public class AopPointCut {
             System.out.println("异常==>磁道编号"+count);
         }
         System.out.println("后置==>磁道编号"+count);
-    }*/
+    }
 
     public int getCount(int count){
         return counts.containsKey(count)?counts.get(count):0;
