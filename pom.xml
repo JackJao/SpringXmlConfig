@@ -25,9 +25,16 @@
         <spring.version>5.0.5.RELEASE </spring.version>
         <junit.version>4.12</junit.version>
         <druid.version>1.1.9</druid.version>
+        <aspectj.version>1.9.1</aspectj.version>
     </properties >
 
     <dependencies >
+        <!--Aspectj Aop支持-->
+        <!--<dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
@@ -47,29 +54,35 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId> org.springframework</groupId >
-            <artifactId> spring-context</artifactId >
-            <version> ${spring.version}</version >
+            <groupId>org.springframework</groupId >
+            <artifactId>spring-context</artifactId >
+            <version>${spring.version}</version >
         </dependency>
         <dependency>
-            <groupId> org.springframework</groupId >
-            <artifactId> spring-core</artifactId >
-            <version> ${spring.version}</version >
+            <groupId>org.springframework</groupId >
+            <artifactId>spring-core</artifactId >
+            <version>${spring.version}</version >
         </dependency>
         <dependency>
-            <groupId> org.springframework</groupId >
-            <artifactId> spring-beans</artifactId >
-            <version> ${spring.version}</version >
+            <groupId>org.springframework</groupId >
+            <artifactId>spring-beans</artifactId >
+            <version>${spring.version}</version >
         </dependency>
         <dependency >
-            <groupId> org.springframework</groupId >
-            <artifactId> spring-web</artifactId >
-            <version> ${spring.version}</version >
+            <groupId>org.springframework</groupId >
+            <artifactId>spring-web</artifactId >
+            <version>${spring.version}</version >
         </dependency>
         <dependency>
-            <groupId> org.springframework</groupId >
-            <artifactId> spring-webmvc </artifactId>
-            <version> ${spring.version}</version >
+            <groupId>org.springframework</groupId >
+            <artifactId>spring-webmvc </artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!--aspect aop 依赖-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${spring.version}</version>
         </dependency>
     </dependencies >
 </project>
