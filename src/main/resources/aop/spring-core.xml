@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <bean id="performance" class="com.jason.demo.aop.xml.PerformanceImpl"/>
+    <!--bean-->
+    <bean id="audience" class="com.jason.demo.aop.xml.Audience"/>
+    <!--aop配置-->
+    <aop:config>
+        <aop:pointcut id="pointCut22" expression="execution(* com.jason.demo.aop.xml.Performance.perform2(..))"/>
+        <!--切面配置,引用上面的bean-->
+        <aop:aspect id="aspectj" ref="audience">
+            <!--pointcut不管定义在哪里，使用id就可以引用-->
+            <aop:pointcut id="pointCut" expression="execution(* com.jason.demo.aop.xml.Performance.perform(..))"/>
+
+            <aop:before method="silenceCellPhones" pointcut-ref="pointCut"/>
+            <aop:before method="takeSeats" pointcut-ref="pointCut"/>
+            <aop:after-returning method="appLause" pointcut-ref="pointCut"/>
+            <aop:after-throwing method="demandRefund" pointcut-ref="pointCut"/>
+            <aop:around method="watchPerformance" pointcut-ref="pointCut22"/>
+        </aop:aspect>
+    </aop:config>
+
+    <!--穿参数-->
+    <aop:config>
+
+        <aop:pointcut id="pointCut22" expression="execution(* com.jason.demo.aop.xml.Performance.perform2(..))"/>
+        <aop:pointcut id="pointCut33" expression="execution(* com.jason.demo.aop.xml.Performance.perform3(int))" />
+        <!--切面配置,引用上面的bean-->
+        <aop:aspect id="aspectj" ref="audience">
+            <!--pointcut不管定义在哪里，使用id就可以引用-->
+            <aop:pointcut id="pointCut" expression="execution(* com.jason.demo.aop.xml.Performance.perform(..))"/>
+
+            <aop:before method="silenceCellPhones" pointcut-ref="pointCut"/>
+            <aop:before method="takeSeats" pointcut-ref="pointCut"/>
+            <aop:after-returning method="appLause" pointcut-ref="pointCut"/>
+            <aop:after-throwing method="demandRefund" pointcut-ref="pointCut"/>
+            <aop:around method="watchPerformance" pointcut-ref="pointCut22"/>
+            <aop:around method="watchPerformance2" pointcut-ref="pointCut33"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
